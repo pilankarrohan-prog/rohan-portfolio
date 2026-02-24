@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohan Pilankar | Portfolio</title>
+<title>Rohan Pilankar | AI & Data Science Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -16,9 +16,33 @@
     scroll-behavior:smooth;
 }
 body{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
+    background:#0f172a;
     color:white;
+    overflow-x:hidden;
 }
+
+/* Animated Background */
+body::before, body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:radial-gradient(circle,#38bdf8,transparent);
+    filter:blur(120px);
+    z-index:-1;
+    animation:float 10s infinite alternate;
+}
+body::after{
+    right:0;
+    background:radial-gradient(circle,#a78bfa,transparent);
+}
+@keyframes float{
+    from{transform:translateY(-50px);}
+    to{transform:translateY(50px);}
+}
+
+/* Navbar */
 nav{
     position:fixed;
     width:100%;
@@ -26,18 +50,20 @@ nav{
     justify-content:space-between;
     padding:20px 10%;
     background:rgba(15,23,42,0.8);
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(15px);
     z-index:1000;
 }
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
+    margin-left:25px;
     font-weight:500;
 }
 nav a:hover{
     color:#38bdf8;
 }
+
+/* Hero */
 header{
     height:100vh;
     display:flex;
@@ -48,30 +74,32 @@ header{
 .hero{
     display:flex;
     align-items:center;
-    gap:60px;
+    gap:80px;
     flex-wrap:wrap;
 }
 .hero img{
-    width:250px;
-    height:250px;
+    width:300px;
+    height:300px;
     border-radius:50%;
     object-fit:cover;
-    border:4px solid #38bdf8;
-    box-shadow:0 0 40px rgba(56,189,248,0.5);
+    border:5px solid #38bdf8;
+    box-shadow:0 0 60px rgba(56,189,248,0.6);
 }
 .hero-text h1{
-    font-size:3rem;
+    font-size:3.5rem;
+    font-weight:800;
 }
 .typing{
     color:#38bdf8;
     font-weight:600;
+    font-size:1.3rem;
 }
 .btn{
-    margin-top:20px;
-    padding:12px 28px;
+    margin-top:25px;
+    padding:14px 35px;
     background:linear-gradient(90deg,#38bdf8,#a78bfa);
     border:none;
-    border-radius:25px;
+    border-radius:30px;
     color:white;
     font-weight:600;
     cursor:pointer;
@@ -80,42 +108,107 @@ header{
 .btn:hover{
     transform:scale(1.1);
 }
+
+/* Section */
 section{
-    padding:80px 10%;
+    padding:100px 10%;
 }
 .section-title{
-    font-size:2rem;
-    margin-bottom:30px;
-    border-left:5px solid #38bdf8;
-    padding-left:15px;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    border-left:6px solid #38bdf8;
+    padding-left:20px;
 }
+
+/* Cards */
 .card{
     background:rgba(30,41,59,0.6);
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    backdrop-filter:blur(10px);
-    transition:0.3s;
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    margin-bottom:30px;
+    transition:0.4s;
 }
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 25px rgba(56,189,248,0.3);
+    transform:translateY(-10px);
+    box-shadow:0 0 40px rgba(56,189,248,0.3);
 }
+
+/* Skills */
+.skill{
+    margin-bottom:25px;
+}
+.skill-name{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+.progress{
+    height:12px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+}
+.progress-bar{
+    height:100%;
+    width:0;
+    border-radius:20px;
+    background:linear-gradient(90deg,#38bdf8,#a78bfa);
+    transition:2s ease;
+}
+
+/* Stats */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+.stat-box{
+    padding:40px;
+    background:rgba(30,41,59,0.6);
+    border-radius:20px;
+}
+
+/* Timeline */
+.timeline{
+    border-left:3px solid #38bdf8;
+    padding-left:30px;
+}
+.timeline-item{
+    margin-bottom:40px;
+}
+
+/* Projects Grid */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
 .contact a{
     display:block;
-    margin-bottom:10px;
+    margin-bottom:15px;
     color:#38bdf8;
     text-decoration:none;
+    font-size:1.1rem;
 }
+
 footer{
     text-align:center;
-    padding:20px;
+    padding:30px;
     background:#1e293b;
+    font-size:0.9rem;
 }
+
 @media(max-width:768px){
     .hero{
         flex-direction:column;
         text-align:center;
+    }
+    .hero img{
+        width:220px;
+        height:220px;
     }
 }
 </style>
@@ -126,6 +219,7 @@ footer{
     <div><strong>Rohan.</strong></div>
     <div>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </div>
@@ -135,9 +229,9 @@ footer{
     <div class="hero">
         <img src="1757180579385.jpg" alt="Rohan Pilankar">
         <div class="hero-text">
-            <h1>Hi, I'm Rohan Pilankar</h1>
-            <p>I am a <span class="typing"></span></p>
-            <a href="#contact"><button class="btn">Hire Me</button></a>
+            <h1>Rohan Pilankar</h1>
+            <p class="typing"></p>
+            <a href="#contact"><button class="btn">Let's Connect</button></a>
         </div>
     </div>
 </header>
@@ -145,26 +239,61 @@ footer{
 <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="card">
-        <p>
-            AI & Data Science student passionate about Angular development, database design, and core Computer Science subjects like DBMS, OS, and C++. 
-            I enjoy building scalable web applications and solving real-world problems.
-        </p>
+        AI & Data Science student passionate about Angular, DBMS, OS, C++, and scalable application design.
+        I focus on building production-level applications and mastering core computer science concepts.
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skill">
+        <div class="skill-name"><span>Angular</span><span>85%</span></div>
+        <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name"><span>C++</span><span>80%</span></div>
+        <div class="progress"><div class="progress-bar" data-width="80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name"><span>DBMS / SQL</span><span>75%</span></div>
+        <div class="progress"><div class="progress-bar" data-width="75%"></div></div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name"><span>HTML / CSS / JS</span><span>90%</span></div>
+        <div class="progress"><div class="progress-bar" data-width="90%"></div></div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Experience Timeline</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>2025 - Angular Development</h3>
+            <p>Built LabourLink platform with authentication and dashboard system.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>2024 - Core CS Mastery</h3>
+            <p>Focused on DBMS, OS, and C++ concepts with practical implementation.</p>
+        </div>
     </div>
 </section>
 
 <section id="projects">
     <h2 class="section-title">Projects</h2>
-
-    <div class="card">
-        <h3>LabourLink Platform</h3>
-        <p>Angular-based platform connecting users and labourers with authentication and dashboard features.</p>
+    <div class="projects">
+        <div class="card">
+            <h3>LabourLink Platform</h3>
+            <p>Role-based Angular platform with authentication and dynamic dashboards.</p>
+        </div>
+        <div class="card">
+            <h3>Multi Role Login System</h3>
+            <p>Secure authentication system with backend connectivity.</p>
+        </div>
     </div>
-
-    <div class="card">
-        <h3>Role-Based Login System</h3>
-        <p>Secure multi-role authentication system with backend integration.</p>
-    </div>
-
 </section>
 
 <section id="contact">
@@ -177,31 +306,35 @@ footer{
 </section>
 
 <footer>
-    © 2026 Rohan Pilankar | Built with Passion 🚀
+    © 2026 Rohan Pilankar | Designed & Developed by Me 🚀
 </footer>
 
 <script>
+/* Typing */
 const texts=["AI & Data Science Student","Angular Developer","Problem Solver","Full Stack Learner"];
-let count=0;
-let index=0;
-let currentText="";
-let letter="";
-
+let count=0,index=0,currentText="",letter="";
 (function type(){
-    if(count===texts.length){
-        count=0;
-    }
+    if(count===texts.length){count=0;}
     currentText=texts[count];
     letter=currentText.slice(0,++index);
     document.querySelector(".typing").textContent=letter;
     if(letter.length===currentText.length){
-        setTimeout(()=>{
-            index=0;
-            count++;
-        },1500);
+        setTimeout(()=>{index=0;count++;},1500);
     }
     setTimeout(type,100);
 })();
+
+/* Skill Animation */
+const bars=document.querySelectorAll(".progress-bar");
+window.addEventListener("scroll",()=>{
+    const trigger=window.innerHeight*0.8;
+    bars.forEach(bar=>{
+        const top=bar.getBoundingClientRect().top;
+        if(top<trigger){
+            bar.style.width=bar.getAttribute("data-width");
+        }
+    });
+});
 </script>
 
 </body>
